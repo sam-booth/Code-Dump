@@ -1,0 +1,23 @@
+"Task is to write a parallelization shell script on top of binary.bin
+which will make procession of input faster. 
+
+Write a shell or python script. If shell is chosen, use tools from
+coreutils ( no exotic tools ) that will optimize the process by using
+some kind of parallelization. Please do not use "parallel" tool - in
+99% cases we can't use it in production. Would be cool if it can
+accept "-j" argument, like -j64 or -j16, + operate in single-threaded
+mode ( essentially running original tool almost as is, if no job
+parameter is passed ). Default system is RHEL7 or RHEL8 ( centos 7 or
+8 ) with NO EPEL repo.
+Ideally you should use as less tools as possible.
+
+
+Additional questions:
+
+* do we need a lower/upper limit of threads, how should we calculate it ?
+
+* what if my list of files is REALLY large, like 108424  lines ? Does
+you solution support it ? Can you make it support it ?
+
+* What if it's a list of words, not a list of strings ? Basically a
+long string of words with spaces in between. "
