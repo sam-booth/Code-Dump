@@ -1,7 +1,5 @@
 import math
 
-# Just a rough calculator to see how many pieces of cladding I'll need for my shed
-
 shortWallWidth = 400
 shortWallHeight = 220
 
@@ -14,6 +12,10 @@ claddingHeightInt = (int(claddingHeightStr) / 1000) # we want meters
 
 claddingLengthStr = input("What length are the boards? (cm) ")
 claddingLengthInt = (int(claddingLengthStr) / 100) # we want meters
+
+costStr = input("What is the cost per piece? ")
+costInt = int(costStr)
+
 print()
 
 def dothething (width, height):
@@ -30,12 +32,13 @@ def dothething (width, height):
     return (boardCount)
     
 boardCount1 = dothething(shortWallWidth, shortWallHeight)
-print ("boards required for the short walls:", math.ceil(boardCount1))
+print ("boards required for the short walls:", boardCount1)
 print()
 
 boardCount2 = dothething(longWallWidth, longWallHeight)
-print ("boards required for the long walls:", math.ceil(boardCount2))
+print ("boards required for the long walls:", boardCount2)
 print()
 
 totalBoardCount = math.ceil(boardCount1 + boardCount2)
 print ("You will need", totalBoardCount, "pieces of cladding")
+print ("Total cost:", (costInt * totalBoardCount))
